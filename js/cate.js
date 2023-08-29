@@ -78,14 +78,20 @@ function getData() {
                           <p class="card-text">Giá : ` +
               Intl.NumberFormat("en-US").format(el.price) +
               `</p>
-                          <a href="#" class="btn btn-primary">Xem Thêm</a>
-                          <a href="#" class="btn btn-success">Mua Ngay</a>
+                          <a href="detail.html?id=` +
+              el.id +
+              `" class="btn btn-primary">Xem Thêm</a>
+                          <a href="#" class="btn btn-success addToCartBtn"  data-id='` +
+              el.id +
+              `'>Mua Ngaaay</a>
                         </div>
                       </div>
                 </div>
                         `;
           });
           $("#resultProduct").html(str);
+          addToCart();
+
           var pages = res.products.last_page;
           var str = ``;
           var i = 1;
@@ -121,6 +127,37 @@ function getData() {
         }
       }
     },
+  });
+}
+function addToCart() {
+  if (!localStorage.getItem("cart") || localStorage.getItem("cart") == null) {
+    var arr = [];
+  } else {
+    var cart = localStorage.getItem("cart");
+    var arr = JSON.parse(cart);
+  }
+
+  $(".addToCartBtn").click(function (e) {
+    e.preventDefault();
+    var id = Number($(this).attr("data-id"));
+    var qty = 1;
+    var item = [id, qty];
+    var check = 0;
+    arr.forEach((el) => {
+      if (el[0] == id) {
+        el[1]++;
+        check = 1;
+      }
+    });
+    if (check == 0) {
+      arr.push(item);
+    }
+    localStorage.setItem("cart", JSON.stringify(arr));
+    alert("Đã thêm thành công!!!");
+    // Toast.fire({
+    //   icon: "success",
+    //   title: "Đã thêm thành công",
+    // });
   });
 }
 function checkLogin() {

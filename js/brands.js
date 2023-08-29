@@ -78,7 +78,9 @@ function getData() {
                             <p class="card-text">Giá : ` +
               Intl.NumberFormat("en-US").format(el.price) +
               `</p>
-                            <a href="#" class="btn btn-primary">Xem Thêm</a>
+                            <a href="detail.html?id=` +
+              el.id +
+              `" class="btn btn-primary">Xem Thêm</a>
                             <a href="#" class="btn btn-success">Mua Ngay</a>
                           </div>
                         </div>
@@ -183,7 +185,9 @@ function searchPrice(id) {
                               <p class="card-text">Giá : ` +
                 Intl.NumberFormat("en-US").format(el.price) +
                 `</p>
-                              <a href="#" class="btn btn-primary">Xem Thêm</a>
+                              <a href="brands.html?id=` +
+                el.id +
+                `" class="btn btn-primary">Xem Thêm</a>
                               <a href="#" class="btn btn-success">Mua Ngay</a>
                             </div>
                           </div>
@@ -224,7 +228,9 @@ function searchPrice(id) {
                               <p class="card-text">Giá : ` +
                 Intl.NumberFormat("en-US").format(el.price) +
                 `</p>
-                              <a href="#" class="btn btn-primary">Xem Thêm</a>
+                              <a href="brands.html?id=` +
+                el.id +
+                `" class="btn btn-primary">Xem Thêm</a>
                               <a href="#" class="btn btn-success">Mua Ngay</a>
                             </div>
                           </div>
@@ -266,7 +272,9 @@ function searchPrice(id) {
                               <p class="card-text">Giá : ` +
                 Intl.NumberFormat("en-US").format(el.price) +
                 `</p>
-                              <a href="#" class="btn btn-primary">Xem Thêm</a>
+                              <a href="brands.html?id=` +
+                el.id +
+                `" class="btn btn-primary">Xem Thêm</a>
                               <a href="#" class="btn btn-success">Mua Ngay</a>
                             </div>
                           </div>

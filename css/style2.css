@@ -319,3 +319,25 @@ table tr td {
   margin-top: 20px;
   margin-bottom: 100px;
 }
+.contentrow {
+  padding-left: 5%;
+  border-right: 1px solid lightblue;
+}
+#content {
+  font-size: 18px !important;
+  text-align: left;
+}
+.contentrow > table {
+  border: 1px solid black;
+}
+.contentrow > p {
+  font-size: 16px;
+}
+td {
+  vertical-align: middle;
+}
+#productImage {
+  height: 400px;
+  width: auto;
+  margin: 0 auto;
+}

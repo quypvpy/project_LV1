@@ -24,10 +24,13 @@
     https://cdn.jsdelivr.net/npm/sweetalert2@11.7.20/dist/sweetalert2.all.min.js
     "></script>
     <link rel="stylesheet" href="css/style2.css" />
+
     <link
       href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
       rel="stylesheet"
     />
+    <link rel="stylesheet" href="css/owl.carousel.min.css" />
+    <script src="js/owl.carousel.min.js"></script>
   </head>
   <body>
     <div
@@ -144,6 +147,62 @@
         </div>
       </div>
     </nav>
+
+    <div class="container1">
+      <div class="row w-100">
+        <div class="col-md-4">
+          <img id="productImage" src="" alt="" />
+        </div>
+
+        <div class="col-md-3">
+          <div class="table-responsive mt-4">
+            <table class="table table-primary">
+              <tbody>
+                <tr>
+                  <td scope="row">Tên sản phẩm</td>
+                  <td><span id="productname"></span></td>
+                </tr>
+                <tr>
+                  <td scope="row">Giảm giá</td>
+                  <td id="discount">Item</td>
+                </tr>
+                <tr>
+                  <td scope="row">Giá</td>
+                  <td id="price">Item</td>
+                </tr>
+                <tr>
+                  <td scope="row">Loại Sản Phẩm</td>
+                  <td id="catename">Item</td>
+                </tr>
+                <tr>
+                  <td scope="row">Thương Hiệu</td>
+                  <td id="brandname">Item</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+
+      <div class="row w-100">
+        <div class="col-md-3" id="owl">
+          <div class="owl-carousel owl-theme w-100" id="carousel"></div>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-md-7 contentrow" id="content"></div>
+        <div class="col-md-4">
+          <h5>Sản phẩm cùng thương hiệu</h5>
+          <div class="row owl-carousel owl-theme" id="sameBrandProduct"></div>
+
+          <hr />
+
+          <h5>Sản phẩm cùng loại</h5>
+          <div class="row owl-carousel owl-theme" id="sameCateProduct"></div>
+        </div>
+      </div>
+    </div>
 
     <script src="js/detail.js"></script>
   </body>
