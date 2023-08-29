@@ -296,3 +296,26 @@ table tr td {
 .hideclass {
   display: none;
 }
+
+.navbar {
+  background: rgb(24, 12, 103);
+  background: linear-gradient(
+    90deg,
+    rgba(24, 12, 103, 1) 0%,
+    rgba(20, 21, 93, 1) 0%,
+    rgba(81, 144, 154, 0.9668242296918768) 45%,
+    rgba(5, 45, 56, 1) 100%
+  );
+}
+#searchBtn {
+  border-color: white;
+  color: white;
+}
+.tongtien {
+  font-weight: bold;
+  font-size: 20px;
+}
+#checkoutBtn {
+  margin-top: 20px;
+  margin-bottom: 100px;
+}

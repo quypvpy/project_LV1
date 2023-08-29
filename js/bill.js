@@ -20,21 +20,6 @@ function loadData() {
       },
       dataType: "JSON",
       success: function (res) {
-        // const brands = res.brands;
-        // const categrories = res.categrories;
-        // const products = res.products.data;
-        // if (brands.length > 0) {
-        //   var str = ``;
-        //   brands.forEach((el) => {
-        //     str +=
-        //       `
-        //                     <li><a class="dropdown-item" href="#">` +
-        //       el.name +
-        //       `</a></li>
-        //                     `;
-        //   });
-        //   $("#brandUl").html(str);
-        // }
         const brands = res.brands;
         const categrories = res.categrories;
         const products = res.products.data;
