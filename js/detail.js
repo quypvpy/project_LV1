@@ -143,12 +143,15 @@ function getData() {
             Intl.NumberFormat("en-US").format(el.price) +
             `
               </p>
+              <div class='btncustom'>
               <a href="detail.html?id=` +
             el.id +
             `" class="btn btn-primary">Chi Tiết</a>
               <a href="" class="btn btn-primary mt-3 addToCartBtn" data-id=` +
             el.id +
             `>Add to cart</a>
+              </div>
+              
             </div>
           </div>
         </div>
