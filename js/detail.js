@@ -20,6 +20,17 @@ function logout() {
 //   ===============================
 const api = "https://students.trungthanhweb.com/api/";
 const imageURL = "https://students.trungthanhweb.com/images/";
+const Toast = Swal.mixin({
+  toast: true,
+  position: "top-end",
+  showConfirmButton: false,
+  timer: 1700,
+  timerProgressBar: true,
+  didOpen: (toast) => {
+    toast.addEventListener("mouseenter", Swal.stopTimer);
+    toast.addEventListener("mouseleave", Swal.resumeTimer);
+  },
+});
 function getData() {
   $("#logoutbtn").hide();
   if (localStorage.getItem("token") && localStorage.getItem("token") != null) {
@@ -135,6 +146,9 @@ function getData() {
               <a href="detail.html?id=` +
             el.id +
             `" class="btn btn-primary">Chi Tiết</a>
+              <a href="" class="btn btn-primary mt-3 addToCartBtn" data-id=` +
+            el.id +
+            `>Add to cart</a>
             </div>
           </div>
         </div>
@@ -167,6 +181,10 @@ function getData() {
               <a href="detail.html?id=` +
             el.id +
             `" class="btn btn-primary">Chi Tiết</a>
+            <a href="" class="btn btn-primary mt-3 addToCartBtn" data-id=` +
+            el.id +
+            `>Add to cart</a>
+            </div>
             </div>
           </div>
         </div>
@@ -176,11 +194,41 @@ function getData() {
         });
 
         Owl();
+        addToCart();
       },
     });
   }
 }
+function addToCart() {
+  if (!localStorage.getItem("cart") || localStorage.getItem("cart") == null) {
+    var arr = [];
+  } else {
+    var cart = localStorage.getItem("cart");
+    var arr = JSON.parse(cart);
+  }
 
+  $(".addToCartBtn").click(function (e) {
+    e.preventDefault();
+    var id = Number($(this).attr("data-id"));
+    var qty = 1;
+    var item = [id, qty];
+    var check = 0;
+    arr.forEach((el) => {
+      if (el[0] == id) {
+        el[1]++;
+        check = 1;
+      }
+    });
+    if (check == 0) {
+      arr.push(item);
+    }
+    localStorage.setItem("cart", JSON.stringify(arr));
+    Toast.fire({
+      icon: "success",
+      title: "Đã thêm thành công",
+    });
+  });
+}
 function Owl() {
   $(".owl-carousel").owlCarousel({
     loop: true,
