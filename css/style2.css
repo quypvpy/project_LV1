@@ -341,3 +341,6 @@ td {
   width: auto;
   margin: 0 auto;
 }
+.cart {
+  min-height: 500px !important;
+}
